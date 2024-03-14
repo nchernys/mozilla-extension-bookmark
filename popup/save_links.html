@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="save_links.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="help"><img width="25" height="25" src="https://img.icons8.com/ios/50/ffffff/help--v1.png"
+        alt="help--v1" /></div>
+    <div class="help-container">
+      <div class="help-info">
+        <h4>Need help?</h4>
+        <ul>
+          <li>Click <b>Ctrl+Alt+L</b> hot keys to open and close the pop-up! </li>
+          <li>Click the <div class="tag-div-input">tag</div> button to use the link you already used! </li>
+          <li>Click the <div class="tag-div">tag</div> button to filter your saved links by tag! </li>
+          <li>Click the <div class="remove">tag</div> button to remove the tag! </li>
+          <li>Questions or suggustions? <br> Let us know!<a
+              href="https://addons.mozilla.org/en-US/firefox/addon/bookmark_and_comment/">
+              <img width="20" height="20" src="https://img.icons8.com/pastel-glyph/64/external-link--v1.png"
+                alt="external-link--v1" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="inner">
+      <input type="text" id="link" class="link" />
+      <input type="text" id="title" class="title" />
+
+      <textarea name="description" id="description" class="description" cols="5" rows="5"
+        placeholder="Note to myself..."></textarea>
+      <input type="text" id="tags" placeholder="ex.: work" />
+      <div class="tags-used" id="tags-used"></div>
+      <button id="save">Save</button>
+
+      <div class="output" id="output">
+        <ul class="output_list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="save_links.js"></script>
+</body>
+
+</html>

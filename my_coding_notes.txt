@@ -1,0 +1,61 @@
+
+
+async function displayOnPage(links) {
+  output_items.innerHTML = "";
+  if (links.length === 0) {
+    output_items.innerHTML = "<br><p>No messages to display yet ... </p>";
+  } else {
+    Object.values(links).forEach((link) => {
+      let li = document.createElement("li");
+      let text = `<p class="address"><a href="${link.address}">${link.title}</a></p>
+      <p>${link.comment}</p> <div class="tag-div" data-tags="${link.tags}">${link.tags}</div><div class="remove">remove</div>`;
+      li.innerHTML = text;
+      output_items.appendChild(li);
+
+      let tagDiv = li.querySelector(".tag-div");
+      tagDiv.addEventListener("click", () => {
+        searchByTag(link.tags);
+      });
+
+      let tagRemove = li.querySelector(".remove");
+      tagRemove.addEventListener("click", async () => {
+        let removed = Object.values(links);
+        let index = removed.indexOf(tagRemove.textContent);
+        removed.splice(index, 1);
+        await browser.storage.local.set({ links_saved: removed });
+        displayOnPage(removed);
+      });
+    });
+    showInputTags();
+  }
+}
+
+async function showInputTags() {
+  tagField.innerHTML = "";
+  let getLinks = await browser.storage.local.get("links_saved");
+  all_links = getLinks.links_saved || [];
+  all_links.forEach((link) => {
+    all_tags.push(link.tags);
+  });
+
+  function getUniqueTags(data) {
+    return [...new Set(data)];
+  }
+
+  function handleTagClick(event) {
+    let clickedTag = event.target.textContent;
+    tags.value = clickedTag;
+  }
+
+  let uniqueTags = getUniqueTags(all_tags);
+  console.log(all_tags.length);
+  console.log(uniqueTags.length);
+
+  for (let tag of uniqueTags) {
+    let tagDiv = document.createElement("div");
+    tagDiv.className = "tag-div-input";
+    tagDiv.textContent = tag;
+    tagDiv.addEventListener("click", handleTagClick);
+    tagField.appendChild(tagDiv);
+  }
+}

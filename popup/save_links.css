@@ -1,0 +1,167 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  min-height: auto;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  background-color: #495057;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(77, 83, 89) rgb(77, 83, 89);
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  padding: 3.2em 0 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.help {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+}
+
+.help-container {
+  position: absolute;
+  width: auto;
+  height: auto;
+  display: none;
+  top: 40px;
+  right: 30px;
+}
+
+.help-info {
+  width: 20em;
+  height: auto;
+  background-color: rgb(255, 157, 0);
+  border-radius: 1em;
+  padding: 1.5em 2em 2.5em;
+  font-size: 14px;
+  z-index: 3;
+  box-shadow: 5px 5px 10px rgb(45, 45, 45);
+}
+
+.help-info li {
+  margin: 1em 0 0 -1em;
+}
+
+.help-info img {
+  margin-bottom: -2px;
+}
+
+.inner {
+  width: 90%;
+  height: 100%;
+}
+input {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  margin: 0.5em auto;
+}
+
+#tags {
+  width: 100%;
+  height: 2em;
+  border: 0.5px white solid;
+  padding: 4px;
+  box-sizing: border-box;
+  margin: 0.5em auto;
+}
+
+textarea {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  margin: 0.5em auto;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(45, 45, 45);
+  font-size: 13px;
+}
+
+button {
+  border: none;
+  width: 6em;
+  margin: 1.5em auto 0em;
+  padding: 0.5em 1em;
+  text-align: center;
+  font-size: 1em;
+  border-radius: 1em;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(255, 162, 0);
+}
+
+.output {
+  width: 100%;
+  height: auto;
+  padding: 4px 0;
+  margin: 0 auto;
+  word-wrap: break-word;
+  color: rgb(255, 255, 255);
+}
+
+.output ul {
+  padding: 0;
+}
+
+.output li {
+  list-style: none;
+  padding: 0.5em 0;
+  border-bottom: 1px rgb(255, 221, 221) dashed;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.remove {
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  padding: 0.2em 1em;
+  margin: 0;
+  border-radius: 1em;
+  cursor: pointer;
+}
+
+.tags-field {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 1em 0 0 0;
+}
+
+.tag-div {
+  display: inline-block;
+  padding: 0.2em 1em;
+  margin: 0 0.5em 0 0;
+  border-radius: 1em;
+  background-color: #01baef;
+  color: white;
+  cursor: pointer;
+}
+
+.tag-div-input {
+  display: inline-block;
+  padding: 0.2em 1em;
+  margin: 0 0.5em 0 0;
+  border-radius: 1em;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
